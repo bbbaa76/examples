@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="lib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Angular</title>
+</head>
+
+<body ng-app="myApp">
+  <div class="container">
+
+  <div class="row" id="header">
+    <div class="col-xs-12 header"><img class="img-responsive" src="img/header.png"></div>
+  </div><!--end of header-->
+
+  <div class="row" id="workField" ng-controller="controller">
+
+    <div class="col-sm-3 btnField" id="firstColoum">
+      <ul class="btnField">
+        <li class="btnField" type="none">
+          <button type="button" class="btn btn-info btn-lg" id="easy" ng-click="insertQuestion()">
+            <span class="badge" id="easyC">0</span>
+            Easy
+            <span class="badge" id="easyS">0</span>
+          </button>
+        </li>
+        <li class="btnField" type="none">
+          <button type="button" class="btn btn-warning btn-lg" id="middle">
+            <span class="badge" id="middleC">0</span>
+            Middle
+            <span class="badge" id="middleS">0</span>
+          </button>
+        </li>
+        <li class="btnField" type="none">
+          <button type="button" class="btn btn-danger btn-lg" id="high">
+            <span class="badge" id="highC">0</span>
+            High
+            <span class="badge" id="highS">0</span>
+          </button>
+        </li>
+        <li class="btnField" type="none">
+          <h2 class="text-success">
+            Total Score
+            <span class="label label-success scoreField" id="totalS">
+             0
+            </span>
+          </h2>
+        </li>
+      </ul>
+    </div><!--end of leftSideBar-->
+
+      <div class="col-sm-5" id="secondColoum">
+        <ul>
+          <li class="qNaField" type='none'>
+            <div class="table-responsive">
+            <table>
+              <tbody>
+                <tr>
+                   <td class="questions"><span id="firstX">{{firstNum}}</span></td>
+                   <td class="questions"><span id="operator">{{sym}}</span></td>
+                   <td class="questions"><span id="secondY">{{secondNum}}</span></td>
+                   <td class="questions"><img id="imgFace"></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </li>
+          <li class="qNaField" id="qNaNum" type="none">
+            <div class="table-responsive">
+              <table>
+                <tbody>
+                  <tr class="numF">
+                    <td class="numF"><span class="draggable">0</span></td>
+                    <td class="numF"><span class="draggable">1</span></td>
+                    <td class="numF"><span class="draggable">2</span></td>
+                    <td class="numF"><span class="draggable">3</span></td>
+                    <td class="numF"><span class="draggable">4</span></td>
+                    <td class="numF"><span class="draggable">5</span></td>
+                    <td class="numF"><span class="draggable">6</span></td>
+                    <td class="numF"><span class="draggable">7</span></td>
+                    <td class="numF"><span class="draggable">8</span></td>
+                    <td class="numF"><span class="draggable">9</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li class="qNaField" type="none">
+            <div class="table-responsive">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="ansNumF">
+                      <span class="digit">HT</span>
+                    </td>
+                    <td class="ansNumF">
+                      <span class="digit">TT</span>
+                    </td>
+                    <td class="ansNumF">
+                      <span class="digit">T</span>
+                    </td>
+                    <td class="ansNumF">
+                      <span class="digit">H</span>
+                    </td>
+                    <td class="ansNumF">
+                      <span class="digit">T</span>
+                    </td>
+                    <td class="ansNumF">
+                      <span class="digit">O</span>
+                    </td>
+                  </tr>
+                  <tr id="qNaFooter">
+                    <td class="ansNumF droppable" id="hthdsD"></td>
+                    <td class="ansNumF droppable" id="tthdsD"></td>
+                    <td class="ansNumF droppable" id="thdsD"></td>
+                    <td class="ansNumF droppable" id="hndsD"></td>
+                    <td class="ansNumF droppable" id="tensD"></td>
+                    <td class="ansNumF droppable" id="onesD"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li type="none">
+            <button type="button" class="btn btn-info btn-lg" id="reset">Reset Answer</button>
+            <button type="button" class="btn btn-primary btn-lg" id="submit">Submit</button>
+          </li>
+          <li class="slide" type="none">
+             <canvas id="slide" width="420" height="20">
+                 Your brower is not support Canvas!!
+             </canvas>
+          </li>
+        </ul>
+      </div><!--end of secondBar-->
+
+    <div class="col-sm-4" id="thirdColoum">
+       <ul>
+         <li class="canvasField" type="none">
+            <canvas id="appD" width="310" height="300">
+               Your brower is not support Canvas!!
+            </canvas>
+         </li>
+         <li class="canvasField" id="canvasFooter" type="none">
+           <div class="table-responsive">
+             <table>
+               <tbody>
+                 <tr>
+                   <td class="ansNumF" id="white" bgcolor="white"><span class="glyphicon glyphicon-erase"></span></td>
+                   <td class="ansNumF" id="pen"><span class="glyphicon glyphicon-pencil"></span></td>
+                   <td class="ansNumF" id="red" bgcolor="red"></td>
+                   <td class="ansNumF" id="blue" bgcolor="blue"></td>
+                   <td class="ansNumF" id="green" bgcolor="green"></td>
+                   <td class="ansNumF"><span id="clean">Clean</span></td>
+                   <td class="ansNumF" style="display:none"><span id="temAns">{{result}}</span></td>
+                   <td class="ansNumF" style="display:none"><span id="lev"></span></td>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+         </li>
+       </ul>
+    </div><!--end of thirdBar-->
+
+  </div><!--ending of workField-->
+</div> <!--end of container-->
+
+
+<script src="lib/jquery-1.11.3.min.js"></script>
+<script src="lib/jquery-ui-1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+<script src="lib/angular.min.js" type="text/javascript"></script>
+<script src="script/controller.js"></script>
+<script src="script/drawApp.js"></script>
+<script src="script/main.js"></script>
+
+</body>
+</html>

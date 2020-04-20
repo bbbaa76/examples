@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.header {
+  background-color: #c5fef4;
+	height: 50px;
+  border-bottom-color:#04cbfd;
+  border-bottom-style:solid;
+  border-left-width:15px;
+  border-left-color:#e7affa;
+  border-left-style:solid;
+}
+
+.btnField{
+  padding:10px;
+}
+
+#easy, #middle, #high{
+  font-size:50px;
+  width:250px;
+}
+
+#appD{
+  border-style:dashed;
+  border-color:blue;
+}
+
+.slide{
+  padding-top:10px;
+}
+
+#slide{
+  border-color:#bdbdf8;
+  border-style: solid;
+  border-width: 2px;
+}
+
+
+#qNaNum{
+  font-size: 30px;
+  color:#4fcd12;
+  padding:10px;
+  border-color:#bdbdf8;
+  border:1px dotted;
+}
+#canvasFooter{
+  font-size: 30px;
+  color:#38bada;
+  padding:10px;
+  border-color:#bdbdf8;
+  border:1px dotted;
+}
+
+#qNaFooter{
+  color:#fae60c;
+}
+
+.numF{
+  width:80px;
+  height:70px;
+  margin:5px;
+  padding:10px;
+  border:1px dotted;
+  border-color:#bdbdf8;
+}
+
+
+.digit{
+  color:red;
+  font-size:20px;
+  padding:10px;
+}
+
+.qNaField{
+  padding-top:10px;
+}
+
+.ansNumF{
+  width:70px;
+  height:60px;
+  margin:5px;
+  padding:10px;
+  border:1px dotted;
+  border-color:#bdbdf8;
+  font-size:30px;
+}
+
+.ans{
+  width:100px;
+}
+
+.numberField{
+  color:blue;
+  font-size:20px;
+}
+
+.canvasField{
+  padding-top: 10px;
+}
+
+.questions{
+  width:106px;
+  height:90px;
+  margin:10px;
+  padding:10px;
+  border-color:#bdbdf8;
+  border:1px dotted;
+  text-align:center;
+  font-size:30px;
+  color: blue;
+  }
+
+.scoreField {
+  padding:`5px;
+  font-size:32px;
+}
+
+#pen{
+  border-bottom-color:black;
+  border-bottom-width:thick;
+}
